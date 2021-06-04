@@ -13,7 +13,7 @@ public class Chained {
     public Chained() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
-    public static DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, "chained");
+    public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "chained");
     static {
         ITEMS.register("chainmail", () -> new Item(new Item.Properties().group(ItemGroup.MISC)));
         ITEMS.register("chainmail_horse_armor", () -> new HorseArmorItem(4, "chainmail", new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)));

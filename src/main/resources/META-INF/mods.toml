@@ -1,23 +1,24 @@
 modLoader="javafml"
-loaderVersion="[28,)"
+loaderVersion="[36,)"
+license="GPLv3"
 [[mods]]
 modId="chained"
 version="${file.jarVersion}"
 displayName="Chained"
-#displayURL="http://example.com/"
+displayURL="http://www.curseforge.com/minecraft/mc-mods/chained"
 authors="IchHabeHunger54"
 description='''
 Adds chains and chain horse armor, as well as recipes for chain armor and the various vanilla horse armors.
 '''
-#[[dependencies.chained]]
-#    modId="forge" #mandatory
-#    mandatory=true #mandatory
-#    versionRange="[28,)" #mandatory
-#    ordering="NONE"
-#    side="BOTH"
-#[[dependencies.chained]]
-#    modId="minecraft"
-#    mandatory=true
-#    versionRange="[1.14.4]"
-#    ordering="NONE"
-#    side="BOTH"
+[[dependencies.chained]]
+modId="forge"
+versionRange="[36,)"
+mandatory=true
+ordering="NONE"
+side="BOTH"
+[[dependencies.chained]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16.5]"
+ordering="NONE"
+side="BOTH"
