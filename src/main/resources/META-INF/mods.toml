@@ -8,7 +8,7 @@ displayName="Chained"
 displayURL="http://www.curseforge.com/minecraft/mc-mods/chained"
 authors="IchHabeHunger54"
 description='''
-Adds chains and chain horse armor, as well as recipes for chain armor and the various vanilla horse armors.
+Adds chainmail and chainmail horse armor, as well as recipes for chainmail armor and the various vanilla horse armors.
 '''
 [[dependencies.chained]]
 modId="forge"
