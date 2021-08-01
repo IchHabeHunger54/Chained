@@ -1,8 +1,8 @@
 package ihh.chained;
 
-import net.minecraft.item.HorseArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.HorseArmorItem;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -15,7 +15,7 @@ public class Chained {
     }
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "chained");
     static {
-        ITEMS.register("chainmail", () -> new Item(new Item.Properties().group(ItemGroup.MISC)));
-        ITEMS.register("chainmail_horse_armor", () -> new HorseArmorItem(4, "chainmail", new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)));
+        ITEMS.register("chainmail", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+        ITEMS.register("chainmail_horse_armor", () -> new HorseArmorItem(4, "chainmail", new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
     }
 }
