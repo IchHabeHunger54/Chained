@@ -11,11 +11,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod("chained")
 public class Chained {
     public Chained() {
-        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-    }
-    public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "chained");
-    static {
+        DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "chained");
         ITEMS.register("chainmail", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
         ITEMS.register("chainmail_horse_armor", () -> new HorseArmorItem(4, "chainmail", new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
+        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }

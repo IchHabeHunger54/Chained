@@ -37,7 +37,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.console.level', 'debug'
             mods {
-                potionbundles {
+                chained {
                     source sourceSets.main
                 }
             }
@@ -46,7 +46,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.console.level', 'debug'
             mods {
-                potionbundles {
+                chained {
                     source sourceSets.main
                 }
             }
@@ -56,7 +56,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             args '--mod', "${project.mod_id}", '--all', '--output', file('src/main/generated/'), '--existing', file('src/main/resources/')
             mods {
-                potionbundles {
+                chained {
                     source sourceSets.main
                 }
             }
@@ -68,8 +68,8 @@ sourceSets.main.resources { srcDir 'src/main/generated' }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${project.mc_version}-${project.forge_version}"
-    //compileOnly fg.deobf("mezz.jei:jei-${project.mc_version}:${project.jei_version}:api")
-    //runtimeOnly fg.deobf("mezz.jei:jei-${project.mc_version}:${project.jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${project.mc_version}:${project.jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${project.mc_version}:${project.jei_version}")
 }
 
 processResources {
