@@ -3,7 +3,7 @@ package ihh.chained;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.HorseArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -22,11 +22,11 @@ public class Chained {
         RegistryObject<HorseArmorItem> chainmailHorseArmor = ITEMS.register("chainmail_horse_armor", () -> new HorseArmorItem(4, "chainmail", new Item.Properties().stacksTo(1)));
         RegistryObject<HorseArmorItem> netheriteHorseArmor = ITEMS.register("netherite_horse_armor", () -> new HorseArmorItem(12, "netherite", new Item.Properties().stacksTo(1).fireResistant()));
         ITEMS.register(bus);
-        bus.<CreativeModeTabEvent.BuildContents>addListener(e -> {
-            if (e.getTab() == CreativeModeTabs.INGREDIENTS) {
+        bus.<BuildCreativeModeTabContentsEvent>addListener(e -> {
+            if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) {
                 e.accept(chainmail);
             }
-            if (e.getTab() == CreativeModeTabs.COMBAT) {
+            if (e.getTabKey() == CreativeModeTabs.COMBAT) {
                 e.accept(chainmailHorseArmor);
                 e.accept(netheriteHorseArmor);
             }
